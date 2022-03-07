@@ -46,6 +46,7 @@
     "@testing-library/jest-dom": "^5.16.2",
     "eslint": "^8.10.0",
     "eslint-config-recommended": "^4.1.0",
+    "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.28.0",
     "husky": "^7.0.4",
     "prettier": "^2.5.1"
