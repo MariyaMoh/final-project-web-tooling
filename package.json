@@ -8,18 +8,19 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-icons": "^4.3.1",
-    "react-scripts": "5.0.0",
+    "react-scripts": "^2.1.3",
     "web-vitals": "^2.1.4"
-  
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint index.js",
+   "lint": "prettier src/* && eslint src/*",
     "prettier-format": "prettier --config .prettierrc 'src/**/*.ts' --write",
-    "precommit": "eslint ."
+    "precommit": "eslint .",
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public"
   },
   "engines": {
     "node": "^14",
@@ -29,6 +30,16 @@
     "extends": [
       "react-app",
       "react-app/jest"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
     ]
   },
   "browserslist": {
@@ -44,12 +55,24 @@
     ]
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^6.4.19",
+    "@storybook/addon-essentials": "^5.3.21",
+    "@storybook/addon-interactions": "^6.4.19",
+    "@storybook/addon-links": "^6.4.19",
+    "@storybook/builder-webpack5": "^6.4.19",
+    "@storybook/manager-webpack5": "^6.4.19",
+    "@storybook/node-logger": "^6.4.19",
+    "@storybook/preset-create-react-app": "^1.2.0",
+    "@storybook/react": "^6.1.21",
+    "@storybook/testing-library": "^0.0.9",
     "@testing-library/jest-dom": "^5.16.2",
     "eslint": "^8.10.0",
-    "eslint-config-recommended": "^4.1.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-recommended": "^3.0.2",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.28.0",
     "husky": "^7.0.4",
-    "prettier": "^2.5.1"
+    "prettier": "^2.5.1",
+    "webpack": "^5.70.0"
   }
 }
