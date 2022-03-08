@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import App from './App';
+// import App from './App';
 import TodoList from './components/TodoList';
 import '@testing-library/jest-dom';
 
